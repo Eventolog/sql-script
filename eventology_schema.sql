@@ -34,7 +34,7 @@ CREATE TABLE chatrooms (
 CREATE TABLE messages (
     id INT IDENTITY(1,1),
     content NVARCHAR(MAX) NOT NULL,
-    date DATETIME DEFAULT GETDATE(),
+    date DATETIME DEFAULT,
     status NVARCHAR(20) CHECK (status IN ('sent', 'delivered', 'read')),
     sender_id INT NOT NULL,
     chat_id INT NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE media (
 CREATE TABLE tickets (
     id INT IDENTITY(1,1),
     name NVARCHAR(100) NOT NULL,
-    reservation DATETIME DEFAULT GETDATE(),
+    reservation DATETIME DEFAULT,
     status NVARCHAR(20) CHECK (status IN ('reserved', 'cancelled', 'used')),
     buyer_id INT NOT NULL,
     event_id INT NOT NULL,
