@@ -101,11 +101,9 @@ CREATE TABLE incidences (
     id INT IDENTITY(1,1),
     reason NVARCHAR(500) NOT NULL,
     status NVARCHAR(20) CHECK (status IN ('open', 'in_progress', 'closed')),
-    ticket_id INT NOT NULL,
     normal_user_id INT NOT NULL,
     solver_user_id INT NOT NULL,
     CONSTRAINT pk_incidences PRIMARY KEY (id),
-    CONSTRAINT fk_incidences_ticket FOREIGN KEY(ticket_id) REFERENCES tickets (id) ON DELETE CASCADE,
     CONSTRAINT fk_incidences_normal_user FOREIGN KEY(normal_user_id) REFERENCES users (id) ON DELETE CASCADE,
     CONSTRAINT fk_incidences_solver_user FOREIGN KEY(solver_user_id) REFERENCES users (id) ON DELETE CASCADE
 );
