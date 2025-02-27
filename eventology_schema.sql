@@ -10,7 +10,7 @@ CREATE TABLE users (
     name NVARCHAR(100) NOT NULL,
     email NVARCHAR(255) UNIQUE NOT NULL,
     password NVARCHAR(255) NOT NULL,
-    type NVARCHAR(20) CHECK (type IN ('normal', 'resolver', 'admin', 'superadmin')),
+    type NVARCHAR(20) CHECK (type IN ('normal', 'organizer', 'superadmin')),
     CONSTRAINT pk_users PRIMARY KEY (id)
 );
 
@@ -20,6 +20,13 @@ CREATE TABLE rooms (
     capacity INT CHECK (capacity > 0),
     description NVARCHAR(500),
     CONSTRAINT pk_rooms PRIMARY KEY (id)
+);
+
+CREATE TABLE inventory_items (
+    id INT IDENTITY(1,1),
+    name NVARCHAR(100) NOT NULL,
+    description NVARCHAR(500),
+    CONSTRAINT pk_inventory_items PRIMARY KEY (id),
 );
 
 CREATE TABLE chatrooms (
@@ -66,16 +73,6 @@ CREATE TABLE seats (
     room_id INT NOT NULL,
     CONSTRAINT pk_seats PRIMARY KEY (id),
     CONSTRAINT fk_seats_room FOREIGN KEY(room_id) REFERENCES rooms (id) ON DELETE CASCADE
-);
-
-CREATE TABLE inventory_items (
-    id INT IDENTITY(1,1),
-    name NVARCHAR(100) NOT NULL,
-    quantity INT CHECK (quantity >= 0),
-    description NVARCHAR(500),
-    room_id INT NOT NULL,
-    CONSTRAINT pk_inventory_items PRIMARY KEY (id),
-    CONSTRAINT fk_inventory_items_room FOREIGN KEY(room_id) REFERENCES rooms (id) ON DELETE CASCADE
 );
 
 CREATE TABLE media (
