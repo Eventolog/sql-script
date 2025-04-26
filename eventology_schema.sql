@@ -35,7 +35,7 @@ CREATE TABLE chatrooms (
     user2_id INT NOT NULL,
     CONSTRAINT pk_chatrooms PRIMARY KEY (id),
     CONSTRAINT fk_chatrooms_user1 FOREIGN KEY(user1_id) REFERENCES users (id) ON DELETE CASCADE,
-    CONSTRAINT fk_chatrooms_user2 FOREIGN KEY(user2_id) REFERENCES users (id) ON DELETE CASCADE
+    CONSTRAINT fk_chatrooms_user2 FOREIGN KEY(user2_id) REFERENCES users (id)
 );
 
 CREATE TABLE messages (
