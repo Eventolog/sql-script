@@ -93,7 +93,7 @@ CREATE TABLE tickets (
     seat_id INT NULL,
     CONSTRAINT pk_tickets PRIMARY KEY (id),
     CONSTRAINT fk_tickets_buyer FOREIGN KEY(buyer_id) REFERENCES users (id) ON DELETE CASCADE,
-    CONSTRAINT fk_tickets_event FOREIGN KEY(event_id) REFERENCES events (id) ON DELETE CASCADE,
+    CONSTRAINT fk_tickets_event FOREIGN KEY(event_id) REFERENCES events (id),
     CONSTRAINT fk_tickets_seat FOREIGN KEY(seat_id) REFERENCES seats (id) ON DELETE CASCADE
 );
 
