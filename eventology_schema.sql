@@ -86,7 +86,7 @@ CREATE TABLE media (
 CREATE TABLE tickets (
     id INT IDENTITY(1,1),
     name NVARCHAR(100) NOT NULL,
-    reservation DATETIME DEFAULT,
+    reservation DATETIME DEFAULT GETDATE(),
     status NVARCHAR(20) CHECK (status IN ('reserved', 'cancelled', 'used')),
     buyer_id INT NOT NULL,
     event_id INT NOT NULL,
