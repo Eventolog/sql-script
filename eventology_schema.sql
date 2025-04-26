@@ -47,7 +47,7 @@ CREATE TABLE messages (
     chat_id INT NOT NULL,
     CONSTRAINT pk_messages PRIMARY KEY (id),
     CONSTRAINT fk_messages_sender FOREIGN KEY(sender_id) REFERENCES users (id) ON DELETE CASCADE,
-    CONSTRAINT fk_messages_chat FOREIGN KEY(chat_id) REFERENCES chatrooms (id) ON DELETE CASCADE
+    CONSTRAINT fk_messages_chat FOREIGN KEY(chat_id) REFERENCES chatrooms (id)
 );
 
 CREATE TABLE events (
