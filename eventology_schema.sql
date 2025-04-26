@@ -105,7 +105,7 @@ CREATE TABLE incidences (
     solver_user_id INT NOT NULL,
     CONSTRAINT pk_incidences PRIMARY KEY (id),
     CONSTRAINT fk_incidences_normal_user FOREIGN KEY(normal_user_id) REFERENCES users (id) ON DELETE CASCADE,
-    CONSTRAINT fk_incidences_solver_user FOREIGN KEY(solver_user_id) REFERENCES users (id) ON DELETE CASCADE
+    CONSTRAINT fk_incidences_solver_user FOREIGN KEY(solver_user_id) REFERENCES users (id)
 );
 
 CREATE TABLE incidences_tickets (
