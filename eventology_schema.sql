@@ -113,7 +113,7 @@ CREATE TABLE incidences_tickets (
     incidence_id INT NOT NULL,
     CONSTRAINT pk_incidences_tickets PRIMARY KEY (ticket_id, incidence_id),
     CONSTRAINT fk_tickets_incidences FOREIGN KEY(ticket_id) REFERENCES tickets (id) ON DELETE CASCADE,
-    CONSTRAINT fk_incidences_tickets FOREIGN KEY(incidence_id) REFERENCES incidences (id) ON DELETE CASCADE
+    CONSTRAINT fk_incidences_tickets FOREIGN KEY(incidence_id) REFERENCES incidences (id)
 );
 
 CREATE TABLE inventory_rooms (
