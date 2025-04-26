@@ -26,7 +26,7 @@ CREATE TABLE inventory_items (
     id INT IDENTITY(1,1),
     name NVARCHAR(100) NOT NULL,
     description NVARCHAR(500),
-    CONSTRAINT pk_inventory_items PRIMARY KEY (id),
+    CONSTRAINT pk_inventory_items PRIMARY KEY (id)
 );
 
 CREATE TABLE chatrooms (
@@ -41,7 +41,7 @@ CREATE TABLE chatrooms (
 CREATE TABLE messages (
     id INT IDENTITY(1,1),
     content NVARCHAR(MAX) NOT NULL,
-    date DATETIME DEFAULT,
+    date DATETIME DEFAULT GETDATE(),
     status NVARCHAR(20) CHECK (status IN ('sent', 'delivered', 'read')),
     sender_id INT NOT NULL,
     chat_id INT NOT NULL,
