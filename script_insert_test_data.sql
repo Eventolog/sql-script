@@ -3,8 +3,8 @@ USE eventology;
 -- USERS
 INSERT INTO users (name, email, password, type) VALUES
 ('Alice Smith', 'alice@example.com', 'password123', 'normal'),
-('Bob Johnson', 'bob@example.com', 'password123', 'organizer'),
-('Charlie Davis', 'charlie@example.com', 'password123', 'superadmin');
+('org', 'org@ev.com', 'org', 'organizer'),
+('root', 'root@ev.com', 'root', 'superadmin');
 
 -- ROOMS
 INSERT INTO rooms (name, capacity, description) VALUES
