@@ -7,10 +7,10 @@ INSERT INTO users (name, email, password, type) VALUES
 ('root', 'root@ev.com', 'root', 'superadmin');
 
 -- ROOMS
-INSERT INTO rooms (name, capacity, description) VALUES
-('Main Hall', 200, 'Large conference room'),
-('Meeting Room A', 20, 'Small meeting room'),
-('Outdoor Area', 100, 'Open air event space');
+INSERT INTO rooms (name, capacity, description, hasSeatingDistribution, roomLayout) VALUES
+('Main Hall', 200, 'Large conference room', 0, ''),
+('Meeting Room A', 20, 'Small meeting room',0, ''),
+('Outdoor Area', 100, 'Open air event space', 0, '');
 
 -- INVENTORY_ITEMS
 INSERT INTO inventory_items (name, description) VALUES
