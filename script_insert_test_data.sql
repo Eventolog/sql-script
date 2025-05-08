@@ -82,7 +82,7 @@ SET @layout = N'{
 -- ROOMS
 INSERT INTO rooms (name, capacity, description, hasSeatingDistribution, roomLayout) VALUES
 ('Empty Room', 200, 'Large empty room', 0, ''),
-('Room with seats', 6, 'Small meeting room',0, @layout);
+('Room with seats', 6, 'Small meeting room',1, @layout);
 
 -- INVENTORY_ITEMS
 INSERT INTO inventory_items (name, description) VALUES
