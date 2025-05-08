@@ -6,11 +6,83 @@ INSERT INTO users (name, email, password, type) VALUES
 ('org', 'org@ev.com', 'org', 'organizer'),
 ('root', 'root@ev.com', 'root', 'superadmin');
 
+DECLARE @layout NVARCHAR(MAX);
+
+SET @layout = N'{
+  "Scenery": [
+    {
+      "Type": "Scenery",
+      "Bounds": "0, 0, 400, 50"
+    }
+  ],
+  "Seats": [
+    {
+      "Bounds": "13, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 1
+    },
+    {
+      "Bounds": "53, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 2
+    },
+    {
+      "Bounds": "53, 123, 30, 30",
+      "Price": 0.0,
+      "Row": 2,
+      "SeatNumber": 2
+    },
+    {
+      "Bounds": "13, 123, 30, 30",
+      "Price": 0.0,
+      "Row": 2,
+      "SeatNumber": 1
+    },
+    {
+      "Bounds": "93, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 3
+    },
+    {
+      "Bounds": "134, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 4
+    },
+    {
+      "Bounds": "232, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 5
+    },
+    {
+      "Bounds": "274, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 6
+    },
+    {
+      "Bounds": "315, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 7
+    },
+    {
+      "Bounds": "356, 74, 30, 30",
+      "Price": 0.0,
+      "Row": 1,
+      "SeatNumber": 8
+    }
+  ]
+}';
+
 -- ROOMS
 INSERT INTO rooms (name, capacity, description, hasSeatingDistribution, roomLayout) VALUES
-('Main Hall', 200, 'Large conference room', 0, ''),
-('Meeting Room A', 20, 'Small meeting room',0, ''),
-('Outdoor Area', 100, 'Open air event space', 0, '');
+('Empty Room', 200, 'Large empty room', 0, ''),
+('Room with seats', 6, 'Small meeting room',0, @layout);
 
 -- INVENTORY_ITEMS
 INSERT INTO inventory_items (name, description) VALUES
