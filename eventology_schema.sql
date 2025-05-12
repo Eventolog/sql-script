@@ -18,9 +18,9 @@ CREATE TABLE rooms (
     id INT IDENTITY(1,1),
     name NVARCHAR(100) NOT NULL,
     capacity INT CHECK (capacity > 0),
-	hasSeatingDistribution BIT NOT NULL,
-	roomLayout NVARCHAR(MAX) NOT NULL,
-	deleted BIT DEFAULT 0,
+    hasSeatingDistribution BIT NOT NULL,
+    roomLayout NVARCHAR(MAX) NOT NULL,
+    deleted BIT DEFAULT 0,
     description NVARCHAR(500),
     CONSTRAINT pk_rooms PRIMARY KEY (id)
 );
