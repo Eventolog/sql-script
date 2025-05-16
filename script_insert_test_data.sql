@@ -59,26 +59,16 @@ INSERT INTO events (name, description, if_full_day, start_time, end_time, status
 
 -- SEATS
 INSERT INTO seats (row_number, seat_number, room_id) VALUES
-(1, 1, 2),
-(1, 2, 2),
-(1, 3, 2);
-
-INSERT INTO seats (row_number, seat_number, room_id) VALUES
+(1, 1, 2), (1, 2, 2), (1, 3, 2),
 (1, 4, 2), (1, 5, 2), (1, 6, 2),
 (2, 3, 2), (2, 4, 2), (2, 5, 2),
-(3, 1, 2), (3, 2, 2), (3, 3, 2);
-
-INSERT INTO seats (row_number, seat_number, room_id) VALUES
+(3, 1, 2), (3, 2, 2), (3, 3, 2),
 (4, 1, 2), (4, 2, 2), (4, 3, 2),
 (5, 1, 2), (5, 2, 2), (5, 3, 2),
-(6, 1, 2), (6, 2, 2), (6, 3, 2);
-
-INSERT INTO seats (row_number, seat_number, room_id) VALUES
+(6, 1, 2), (6, 2, 2), (6, 3, 2),
 (7, 1, 2), (7, 2, 2), (7, 3, 2),
 (8, 1, 2), (8, 2, 2), (8, 3, 2),
-(9, 1, 2), (9, 2, 2), (9, 3, 2);
-
-INSERT INTO seats (row_number, seat_number, room_id) VALUES
+(9, 1, 2), (9, 2, 2), (9, 3, 2),
 (10, 1, 2), (10, 2, 2), (10, 3, 2),
 (11, 1, 2), (11, 2, 2), (11, 3, 2),
 (12, 1, 2), (12, 2, 2), (12, 3, 2);
